@@ -18,7 +18,8 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-double multiply(double num1,double num2){ //define the function here similar to defining variable in line 11
+double multiply(double num1,double num2){ //define the function here similar to defining
+  // variable in line 11. Note that for functions we only typically call it define and not initialize
 
   double product;
   product = num1 * num2;
