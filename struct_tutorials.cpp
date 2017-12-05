@@ -32,7 +32,7 @@ int main()
 
   cout<<sena.Name<<", " <<sena.PID<<endl;
 
-    cout<<" Info about Student 2"<<endl;
+  cout<<" Info about Student 2"<<endl;
 
   cout<<savio.Name<<", " <<savio.PID<<endl;
 
