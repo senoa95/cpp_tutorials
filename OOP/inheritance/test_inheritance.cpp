@@ -116,9 +116,9 @@ public:
     coolPoints = coolPoints + 3;
   }
   void pimp()
-  { car car;
-    car.add_turbo();
-    car.add_alloy_wheels();   //how do I call functons using other functions?
+  {
+    add_turbo();
+    add_alloy_wheels();   //how do I call functons using other functions?
   }
 };
 

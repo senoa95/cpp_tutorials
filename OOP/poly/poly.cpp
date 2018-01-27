@@ -21,14 +21,14 @@ using namespace std;
 
 class grad_student
 {
-private:
-  float gpa;
 
 public:   //this makes all following variables public
   string name;
   int age;
+  float gpa;
   string advisor_name;
   string courses_taken[5];
+
 
 grad_student()
 {
@@ -44,7 +44,7 @@ float look_at_gpa(){
 
 }
 
-void party_harder(float numBeers)
+void party_harder(double numBeers)
 {
   cout<<"number of beers cannot be decimal - DRINK THE WHOLE BEER MAN"<<endl;
 }
@@ -88,17 +88,41 @@ void change_advisor(string new_name)
 // }
 };
 
+class VtGradStudent: public grad_student
+{
+public:
+  VtGradStudent()
+  {
+    grad_student();
+  }
+void party_harder()
+{
+ gpa = gpa - 0.5;
+}
+
+void party_harder(int numBeers)
+{
+  if (numBeers > 18)
+  {
+    gpa = gpa - 1;
+  }
+  else
+  {
+    party_harder();
+  }
+}
+
+};
+
 int main(int argc, char const *argv[]) {
-  grad_student sena;
+  VtGradStudent sena;
   sena.name = "Sena";
-  cout <<sena.name<<" - ";
+  cout <<sena.name<<"  ";
   cout <<sena.age<<endl;
   cout<<"original gpa = "<<sena.look_at_gpa()<<endl;
-  sena.study_harder();
-  sena.study_harder();
-  sena.party_harder();
-  sena.party_harder(18);
-  sena.party_harder(2.5);
+  // sena.study_harder();
+  // sena.study_harder();
+  sena.party_harder(0.2);
 
   cout<<"final gpa = "<<sena.look_at_gpa()<<endl;
   sena.change_advisor("Tomo");
@@ -113,6 +137,7 @@ int main(int argc, char const *argv[]) {
   cout<<"old gpa = "<<savio.look_at_gpa()<<endl;
   savio.study_harder();
   savio.study_harder();
+  savio.party_harder(13);
   cout<<"new gpa = "<<savio.look_at_gpa()<<endl;
 
   return 0;

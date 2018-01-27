@@ -26,6 +26,7 @@ public:
 
   bool operator < (const ThreeDPoint pInt)
   {
+
     if (this->EuclDist() < pInt.EuclDist()) //this: a pointer to the object within this class
                     // ->: a member access operator gives the item located at the given pointer (in this case "this")
     {
