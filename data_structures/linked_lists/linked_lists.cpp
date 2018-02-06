@@ -31,7 +31,18 @@ public:
     head = temp;
   }
 
-  void instert_next(int nextVal, int afterVal)
+// This function removes the head of the linked list:
+
+void remove_head()
+{
+  Lnode *cursor;
+  cursor = head;
+  head = head->next;
+  delete cursor;
+}
+
+// This function inserts a new value after the value indicated by afterVal.
+void instert_next(int nextVal, int afterVal)
   {
     Lnode *cursor = head;
 
@@ -49,6 +60,28 @@ public:
     }
   }
 
+//This function searches for the "target" and removes it from the linked list.
+
+void remove_target(int target)
+{
+  Lnode *cursor;
+  Lnode *prev;
+  cursor = head;
+  prev = NULL;
+
+  while (cursor!=NULL and cursor->data!=target)
+  {
+    prev = cursor;
+    cursor = cursor->next;
+  }
+
+  if (cursor!=NULL)
+  {
+    prev->next = cursor->next;
+    delete cursor;
+  }
+
+}
 
 //prints all elements of linked list
 void display_list()
@@ -61,6 +94,7 @@ void display_list()
   }
   cout<<endl;
 }
+
 };
 
 int main(int argc, char const *argv[]) {
@@ -70,6 +104,10 @@ int main(int argc, char const *argv[]) {
   LL.instert_next(11,0);
   LL.display_list();
   LL.insert_head(10);
+  LL.display_list();
+  LL.remove_head();
+  LL.display_list();
+  LL.remove_target(11);
   LL.display_list();
 
   return 0;
