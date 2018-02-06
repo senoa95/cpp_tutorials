@@ -44,7 +44,7 @@ float look_at_gpa(){
 
 }
 
-void party_harder(double numBeers)
+void party_harder(float numBeers)
 {
   cout<<"number of beers cannot be decimal - DRINK THE WHOLE BEER MAN"<<endl;
 }
