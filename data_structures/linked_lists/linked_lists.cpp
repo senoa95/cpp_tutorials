@@ -83,6 +83,31 @@ void remove_target(int target)
 
 }
 
+void remove_target2(int target)
+{
+  Lnode *cursor;
+  Lnode *temp;
+  cursor = head;
+
+if (head->data == target)
+{
+  remove_head();
+  return;
+
+}
+  while (cursor->next!=NULL)
+  {
+    if (cursor->next->data==target)
+    {
+      temp = cursor->next;
+      cursor->next = cursor->next->next;
+      delete temp;
+      return;
+    }
+    cursor = cursor->next;
+  }
+}
+
 //prints all elements of linked list
 void display_list()
 {
@@ -105,9 +130,9 @@ int main(int argc, char const *argv[]) {
   LL.display_list();
   LL.insert_head(10);
   LL.display_list();
-  LL.remove_head();
-  LL.display_list();
   LL.remove_target(11);
+  LL.display_list();
+  LL.remove_target2(10);
   LL.display_list();
 
   return 0;
