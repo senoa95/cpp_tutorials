@@ -63,6 +63,11 @@ void display_list()
 }
 };
 
+class stack: public LinkedLists
+{
+
+};
+
 int main(int argc, char const *argv[]) {
   LinkedLists LL;
   LL.head->next = new Lnode(17);
