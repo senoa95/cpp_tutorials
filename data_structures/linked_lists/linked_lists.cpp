@@ -61,25 +61,15 @@ void display_list()
   }
   cout<<endl;
 }
-
-// remove first node
-void remove_first_node()
-{
-	Lnode *temp;
-	temp = head;
-	head = head->next;
-	delete temp;
-}
 };
 
 int main(int argc, char const *argv[]) {
   LinkedLists LL;
   LL.head->next = new Lnode(17);
   // LL.head->next->next = new Lnode(27);
+  LL.instert_next(11,0);
   LL.display_list();
   LL.insert_head(10);
-  LL.display_list();
-  LL.remove_first_node();
   LL.display_list();
 
   return 0;
